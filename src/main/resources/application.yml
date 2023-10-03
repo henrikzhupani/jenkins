@@ -1,0 +1,6 @@
+# configuring port number on which application should run
+#server.port=8081
+
+- name: Jenkins-Action
+uses: joshlk/jenkins-githubaction@V0.0.1
+            
