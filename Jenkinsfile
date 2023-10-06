@@ -1,10 +1,15 @@
 pipeline {
     agent any
-
     stages {
-        stage('Echo Message') {
+        stage('Build for Test Branch') {
+            when {
+                expression {
+                    return env.BRANCH_NAME == 'test'
+                }
+            }
             steps {
-                echo 'Hello, the Build was succesfully done!'
+                // Your build steps for the 'test' branch here
+                sh 'echo "Building the branch: $BRANCH_NAME"'
             }
         }
     }
